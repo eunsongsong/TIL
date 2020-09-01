@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="oop.flexible.MereClerk"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="oop.flexible.Manager"/>
+    <fullyQualifiedTypeName name="com.sun.tools.sjavac.comp.dependencies.PublicApiCollector"/>
+    <fullyQualifiedTypeName name="workshop.book.control.ManageBook"/>
+    <fullyQualifiedTypeName name="workshop.book.entity.Publication"/>
+    <fullyQualifiedTypeName name="workshop.book.entity.Magazine"/>
+    <fullyQualifiedTypeName name="workshop.book.entity.Novel"/>
+    <fullyQualifiedTypeName name="workshop.book.entity.ReferenceBook"/>
+</qualifiedTypeNameHistroy>

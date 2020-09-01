@@ -1,0 +1,14 @@
+package workshop.book.entity;
+
+public class ReferenceBook {
+	private String field;
+
+	public ReferenceBook() {
+		super();
+	}
+	
+	public ReferenceBook(String title, String publishingDate, int page, int price, String field) {
+		super(title, publishingDate, page, price);
+		this.field = field;
+	}
+}

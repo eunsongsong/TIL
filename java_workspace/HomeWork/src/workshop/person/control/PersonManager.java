@@ -1,5 +1,8 @@
 package workshop.person.control;
 
+
+import java.util.Scanner;
+
 import workshop.person.entity.PersonEntity;
 
 public class PersonManager {
@@ -16,11 +19,21 @@ public class PersonManager {
 		pManager.fillPersons(persons);
 		// 전체 persons 정보를 display 한다. 
 		pManager.showPerson(persons);
+		
+		// 성별 입력받기(char타입 입력받기)
+		Scanner scanner = new Scanner(System.in);
+		System.out.println(">> 성별을 입력하세요");
+		char genderValue = scanner.next().charAt(0);
 		// persons 객체 정보 중 해당 gender 의 인원수를 return 받는다.
-		pManager.findByGender(persons, '여');
+		pManager.findByGender(persons, genderValue);
 		pManager.printTitleLine();
+		
+		// 이름 입력받기
+		System.out.println(">> 이름을 임력하세요");
+		String nameValue = scanner.next();
 		// 특정 person의 상세정보를 display 한다.
-		pManager.showPerson(persons, "김하늘");
+		pManager.showPerson(persons, nameValue);
+		scanner.close();
 
 	}
 
