@@ -1,0 +1,7 @@
+
+public class Cat extends Animal{
+	String s;
+	public Cat() {
+		// TODO Auto-generated constructor stub
+	}
+}

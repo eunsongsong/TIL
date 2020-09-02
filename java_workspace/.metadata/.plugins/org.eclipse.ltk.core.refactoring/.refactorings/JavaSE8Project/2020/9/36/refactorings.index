@@ -2,3 +2,9 @@
 1598925951272	Extract superclass 'Employee'
 1598937364086	Rename type 'InFlexibleCompanyDemo'
 1598937827511	Extract method 'printEmployeeInfo'
+1599007388666	Copy compilation unit
+1599007398602	Copy compilation unit
+1599007416619	Delete element
+1599007423651	Copy compilation unit
+1599011462478	Delete element
+1599031257585	Extract local variable 'iterator'

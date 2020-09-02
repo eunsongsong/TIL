@@ -1,0 +1,12 @@
+package workshop.animal.entity;
+
+public class Animal2 {
+	protected int legs;
+	
+	protected Animal2(int legs) {
+		this.legs = legs;
+	}
+	
+	public abstract void eat();
+	
+}

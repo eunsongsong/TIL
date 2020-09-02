@@ -1,0 +1,19 @@
+package chap07.class2.statics;
+
+public class MyCount {
+	private int serialNumber;
+	private static int counter;
+	
+//	public MyCount() {
+//		serialNumber++;
+//		counter++;
+//	}
+	
+	public int getSerialNumber() {
+		return this.serialNumber;
+	}
+	
+	public static int getCounter() {
+		return counter;
+	}
+}

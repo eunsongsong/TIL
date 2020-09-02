@@ -1,4 +1,18 @@
 package chap06.class1.overriding;
+
 public class Parent {
-  public void doSomething() {}
+	private final String MY_NAME;
+	
+	public Parent() {
+		this("");
+	}
+	
+	// blank final variable
+	// 상수읭 값을 생성자에서 초기화 할 수 있다.
+	public Parent(String name) {
+		this.MY_NAME = name;
+	}
+
+	public final void doSomething() {
+	}
 }

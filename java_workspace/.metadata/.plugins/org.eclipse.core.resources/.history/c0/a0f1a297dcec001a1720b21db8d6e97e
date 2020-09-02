@@ -1,0 +1,10 @@
+package chap07.class2.statics;
+
+public class MyCountTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

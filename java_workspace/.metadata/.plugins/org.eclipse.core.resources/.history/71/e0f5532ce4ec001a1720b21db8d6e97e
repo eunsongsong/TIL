@@ -1,0 +1,27 @@
+package chap09.collections;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListTest {
+
+	public static void main(String[] args) {
+		// ArrayList 按眉 积己 (java 5.0 捞傈 规侥)
+		List list = new ArrayList();
+		list.add("Hello"); // 0
+		list.add("Java"); // 1
+		list.add("Hello");
+		list.add("JavaScript");
+		list.add(100);
+		
+		String value = (String) list.get(1);
+		System.out.println(value);
+
+		System.out.println("For loop");
+		for (int i = 0; i < list.size(); i++) {
+			value = (String)list.get(i);
+			System.out.println(value);
+		}
+	}
+
+}

@@ -1,0 +1,9 @@
+package chap07.interfaces;
+
+public abstract class Animal {
+	public abstract void eat();
+
+	public void walk() {
+		System.out.println("동물이 걷는다.");
+	}
+}

@@ -26,6 +26,7 @@ public class ManageBook {
 		System.out.println(">> 조회할 책 번호 입력");
 		int value = scanner.nextInt();
 		modifyPrice(publication[value-1]);
+		scanner.close();
 
 	}
 
