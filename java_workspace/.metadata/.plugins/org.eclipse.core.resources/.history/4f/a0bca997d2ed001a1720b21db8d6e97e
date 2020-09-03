@@ -1,0 +1,26 @@
+package jdbc.user.test;
+
+import java.util.List;
+
+import jdbc.UserVO;
+import jdbc.user.dao.UserDAO;
+
+public class UserDAOTest {
+
+	public static void main(String[] args) {
+		UserDAO dao = new UserDAO();
+		
+		// user 1명 조회
+		UserVO user = dao.getUser("dooly");
+		System.out.println(user);
+		
+		// user 등록
+		UserVO u = new UserVO("0000", "a", "a", "a");
+		dao.insertUser(u);
+		
+		// user 전체 조회
+		List<UserVO> userList = dao.getUsers();
+		System.out.println(userList);
+	}
+
+}

@@ -1,37 +1,40 @@
 package workshop.animal.entity;
 
 public class Fish extends Animal implements Pet {
-	public Fish(int legs) {
-		super(legs);
-	}
+	private String name;
 
-	public String name;
-	
-	@Override
-	public void play() {
-		System.out.println("물고기는 뻐끔뻐끔");
+	public Fish(String name) {
+		super(0);
+		this.name = name;
 	}
 	
-	@Override
-	public void eat() {
-		System.out.println("물고기는 물 속에서 먹이를 먹는다.");
-	}
-	
-	@Override
-	public void walk() {
-		System.out.println("물고기는 다리가 "+legs+"개, 물고기는 헤엄친다.");
+	public Fish() {
+		this("");
 	}
 
 	@Override
-	public String setName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.name;
+	}
+
+	@Override
+	public void play() {
+		System.out.println(name+"은(는) 물에서 놀아요");
+	}
+
+	@Override
+	public void eat() {
+		System.out.println("물고기는 물 속에서 먹어요");
+	}
+
+	@Override
+	public void walk() {
+		System.out.println("물고기는 걷기 않고 헤엄쳐요");
 	}
 
 }

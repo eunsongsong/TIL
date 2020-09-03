@@ -1,0 +1,21 @@
+package jdbc;
+
+public class EmployeesSelectTest {
+
+	public static void main(String[] args) {
+		// 1. Driver Class Loading
+		
+		// Unhandled exception type ClassNotFoundException
+		// try ~ catch 구문 선언
+		try {
+			Class.forName("oracle.jdbc.OracleDriver1");		
+			System.out.println("Driver Loading OK!!");
+		}catch(ClassNotFoundException ex) {
+			// 오류 메세지 출력
+			System.out.println(ex.getMessage());
+			// 메서드 호출 경로와 오류 메세지를 함께 출력
+			ex.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,43 @@
+package workshop.animal.control;
+
+import workshop.animal.entity.Animal;
+import workshop.animal.entity.Animal2;
+import workshop.animal.entity.Cat;
+import workshop.animal.entity.Cat2;
+import workshop.animal.entity.Fish;
+import workshop.animal.entity.Pet;
+import workshop.animal.entity.Pet2;
+import workshop.animal.entity.Spider;
+
+public class TestAnimals {
+
+	public static void main(String[] args) {
+		Fish f = new Fish();
+		f.eat();
+		f.walk();
+		f.play();
+		Cat c = new Cat("Fluffy");
+		System.out.println(c.getName());
+		Animal af = new Fish();
+		Animal as = new Spider();
+		Pet pc = new Cat();
+
+		// Cat 객체를 생성하는 3가지 방법
+		Cat2 cat1 = new Cat2();
+		cat1.setName("야옹이");
+		System.out.println(cat1.getName());
+		cat1.play();
+		cat1.eat();
+		cat1.walk();
+
+		Animal2 cat2 = new Cat2("나비");
+		cat2.eat();
+		cat2.walk();
+
+		Pet2 cat3 = new Cat2();
+		cat3.setName("냐앙");
+		System.out.println(cat3.getName());
+		cat3.play();
+	}
+
+}

@@ -61,3 +61,9 @@
 2020-09-02 21:35:46,930 [Worker-191: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\TIL\java_workspace\BasicJava\src\test\resources
 2020-09-02 21:44:07,537 [Worker-191: Launching Animal] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
 2020-09-02 21:44:07,542 [Worker-191: Launching Animal] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-02 21:44:07,543 [Worker-191: Launching Animal] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\TIL\java_workspace\BasicJava\src\main\resources
+2020-09-02 21:44:07,545 [Worker-191: Launching Animal] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-02 21:44:07,546 [Worker-191: Launching Animal] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\TIL\java_workspace\BasicJava\src\test\resources
+2020-09-03 10:09:44,764 [Worker-193: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-09-03 10:09:44,773 [Worker-193: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-03 10:09:44,774 [Worker-193: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\TIL\java_workspace\BasicJava\src\main\resources

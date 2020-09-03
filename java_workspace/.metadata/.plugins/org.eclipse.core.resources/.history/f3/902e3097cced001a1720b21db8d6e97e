@@ -1,0 +1,19 @@
+package jdbc.user.test;
+
+import java.util.List;
+
+import jdbc.UserVO;
+import jdbc.user.dao.UserDAO;
+
+public class UserDAOTest {
+
+	public static void main(String[] args) {
+		UserDAO dao = new UserDAO();
+		
+		UserVO user = dao.getUser("dooly");
+		List<UserVO> userList = dao.getUsers();
+		System.out.println(user);
+		System.out.println(userList);
+	}
+
+}
