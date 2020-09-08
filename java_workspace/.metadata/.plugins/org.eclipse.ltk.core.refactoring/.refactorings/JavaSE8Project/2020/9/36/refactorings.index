@@ -9,3 +9,8 @@
 1599011462478	Delete element
 1599031257585	Extract local variable 'iterator'
 1599121760123	Rename field 'userid'
+1599132752040	Convert local variable 'x' to field
+1599179161368	Delete elements
+1599179779795	Copy compilation unit
+1599179920983	Copy compilation unit
+1599203553957	Extract local variable 'instance1'

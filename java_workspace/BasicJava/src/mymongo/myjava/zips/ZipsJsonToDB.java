@@ -22,7 +22,6 @@ public class ZipsJsonToDB {
 		MongoCollection<Document> collection = database.getCollection("zips_col");
 		System.out.println(collection);
 
-		
 		int count = 0;
 		int batch = 1000;
 

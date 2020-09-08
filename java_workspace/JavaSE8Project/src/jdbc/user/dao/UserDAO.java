@@ -40,6 +40,41 @@ public class UserDAO {
 			con.close();
 	}
 
+	// user 삭제
+	public int deleteUser(String userid) {
+		String sql = "delete from users where userid = ?";
+		try {
+			Connection connection = getConnection();
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, userid);
+			stmt.executeUpdate();
+			
+			close(stmt,connection);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	// user 정보 수정
+	public int updateUser(UserVO user) {
+		String sql = "update users set NAME=?, GENDER=?, CITY=? where USERID=?";
+		try {
+			Connection connection = getConnection();
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(4, user.getUserId());
+			stmt.setString(1, user.getName());
+			stmt.setString(2, user.getGender());
+			stmt.setString(3, user.getCity());
+			stmt.executeUpdate();
+			close(stmt, connection);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
 	// user 등록
 	public Object insertUser(UserVO user) {
 		StringBuilder builder = new StringBuilder("insert into users values ('" + user.getUserId() + "','"
@@ -48,14 +83,13 @@ public class UserDAO {
 		UserVO addUser = null;
 
 		try {
-//			Connection con = getConnection();
-//			Statement stmt = con.createStatement();
-			Connection con = getConnection();
-			PreparedStatement stmt = con.prepareStatement(sql);
+			Connection connection = getConnection();
+//			Statement stmt = connection.createStatement();
+			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.toString();
 			stmt.executeQuery(sql);
 
-			close(stmt, con);
+			close(stmt, connection);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
