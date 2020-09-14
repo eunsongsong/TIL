@@ -1,7 +1,0 @@
-package workshop.animal.entity;
-
-public interface Pet {
-	void play();
-	public String setName(String name);
-	public String getName();
-}

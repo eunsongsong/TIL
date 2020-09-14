@@ -2,6 +2,8 @@ package myspring.di.xml.test;
 
 // Assert 클래스에 있는 모든 static method를 import 한다.
 import static org.junit.Assert.*;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.GenericXmlApplicationContext;
@@ -10,13 +12,20 @@ import myspring.di.xml.Hello;
 import myspring.di.xml.Printer;
 
 public class HelloBeanJunitTest {
+	BeanFactory factory;
+	
+	@Before
+	public void init() {
+		System.out.println("@Before");
+		// 1. Spring Bean Container 객체를 생성
+		factory = new GenericXmlApplicationContext("config/spring_beans.xml");		
+	}
 
 	// test method 선언시 public void 이어야 한다.
 	// @Test 어노테이션을 반드시 선언해 주어야 한다!!
 	@Test
 	public void helloBean() {
-		// 1. Spring Bean Container 객체를 생성
-		BeanFactory factory = new GenericXmlApplicationContext("config/spring_beans.xml");
+		System.out.println("@Test");
 		// 2. Bean Container에게 Hello Bean을 요청하기
 		// Hello hello = new Hello(); (X)
 		Hello hello = (Hello)factory.getBean("hello");
