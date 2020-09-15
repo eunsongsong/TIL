@@ -14,5 +14,7 @@
 	</form>
 	<hr>
 	<a href="getUserList.do">사용자 리스트</a>
+	<br/>
+	<a href="insertUserForm.do">사용자 등록</a>
 </body>
 </html>

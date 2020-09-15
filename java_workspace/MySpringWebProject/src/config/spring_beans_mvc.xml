@@ -7,6 +7,12 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+	<!-- DispatcherServlet의 url-pattern 충돌 문제 해결 -->
+	<mvc:default-servlet-handler/>
+	
+	<!-- Json, XML data read/write support -->
+	<mvc:annotation-driven />
+	
 	<!-- JSP 확장명 생략할 수 있도록 해주는 설정 -->
 	<!-- 아래 주석은 Controller에서 포워딩 되는 .jsp 확장자를 생략할 수 있다. -->
 	<bean id="viewResolver"

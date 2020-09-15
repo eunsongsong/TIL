@@ -24,6 +24,19 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
+	<!-- Encoding Filter 클래스 설정 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>EUC-KR</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
 
 	<!-- The front controller of this Spring Web application, responsible for 
 		handling all application requests -->
@@ -40,7 +53,7 @@
 	<!-- Map all requests to the DispatcherServlet for handling -->
 	<servlet-mapping>
 		<servlet-name>springDispatcherServlet</servlet-name>
-		<url-pattern>*.do</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 </web-app>
