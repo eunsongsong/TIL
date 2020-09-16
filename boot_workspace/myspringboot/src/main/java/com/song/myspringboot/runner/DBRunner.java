@@ -17,8 +17,13 @@ import org.springframework.stereotype.Component;
 @Order(1)
 public class DBRunner implements ApplicationRunner {
 
-	@Autowired
-	private DataSource dataSource;
+//	@Autowired
+	private final DataSource dataSource;
+	
+	// 생성자를 만들면 @Autowired 안해도 됨!
+	public DBRunner(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
 	
 	private Logger logger = LoggerFactory.getLogger(DBRunner.class);
 	
