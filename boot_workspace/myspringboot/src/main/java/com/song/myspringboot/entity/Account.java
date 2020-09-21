@@ -13,11 +13,12 @@ public class Account {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(unique = true)
+	@Column
 	private String username;
 
 	private String password;
 	
+	@Column(unique = true)
 	private String email;
 
 	public Long getId() {
@@ -54,7 +55,7 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", username=" + username + ", password=" + password + "]";
+		return "Account [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + "]";
 	}
 
 	@Override
