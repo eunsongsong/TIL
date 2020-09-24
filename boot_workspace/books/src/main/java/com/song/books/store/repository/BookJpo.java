@@ -29,6 +29,10 @@ public class BookJpo {
 	private String imgUrl;
 	private String introduce;
 	
+	public BookJpo() {
+		super();
+	}
+	
 	public BookJpo(Book book) {
 		super();
 		BeanUtils.copyProperties(book, this); // book을 현재 객체에 copy

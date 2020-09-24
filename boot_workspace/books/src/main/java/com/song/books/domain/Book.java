@@ -1,8 +1,5 @@
 package com.song.books.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 import com.google.gson.Gson;
 
 import lombok.AllArgsConstructor;
@@ -12,10 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity
 public class Book {
 
-	@Id
 	private String ISBN;
 	private String title;
 	private String author;
@@ -35,7 +30,7 @@ public class Book {
 				"book_images/spring.jpg", "Spring Boot and Spring Cloud offer Java developers an easy");
 	}
 
-	public static void main(String [] args) {
+	public static void main(String[] args) {
 		System.out.println(Book.sample());
 	}
 }

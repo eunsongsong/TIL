@@ -1,0 +1,2 @@
+server:  port: 9090
+    datasource:    driver-class-name: oracle.jdbc.driver.OracleDriver    url: jdbc:oracle:thin:@DESKTOP-2L5NM4J:1521/XE    username: hr    password: hr  jpa:    database-platform: org.hibernate.dialect.H2Dialect    hibernate:      ddl-auto: create-drop

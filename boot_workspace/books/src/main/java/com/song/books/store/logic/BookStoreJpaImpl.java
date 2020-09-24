@@ -12,12 +12,16 @@ import com.song.books.store.BookStore;
 import com.song.books.store.exception.DuplicateException;
 import com.song.books.store.repository.BookJpo;
 import com.song.books.store.repository.BookStoreJpaRepository;
+import com.song.books.store.repository.BookStoreJpaRepositoryCustom;
 
 @Repository
 public class BookStoreJpaImpl implements BookStore {
 
 	@Autowired
 	BookStoreJpaRepository bookStore;
+
+	@Autowired
+	BookStoreJpaRepositoryCustom bookSearch;
 
 	@Override
 	public List<Book> retrieveAll() throws NoSuchElementException {
@@ -48,19 +52,26 @@ public class BookStoreJpaImpl implements BookStore {
 	public void update(Book book) throws NoSuchElementException {
 		if (!isExist(book.getISBN()))
 			throw new NoSuchElementException(book.getISBN());
-		bookStore.save(new BookJpo(book));
+		bookStore.save(new BookJpo(book)); // pool connection get -> query execute/result/connection
 
 	}
 
 	@Override
-	public void delete(String ISBN) throws NoSuchElementException{
-		if(!isExist(ISBN)) throw new NoSuchElementException(ISBN);
+	public void delete(String ISBN) throws NoSuchElementException {
+		if (!isExist(ISBN))
+			throw new NoSuchElementException(ISBN);
 		bookStore.deleteById(ISBN);
 	}
 
 	@Override
 	public List<Book> search(String keyword, String searchType) {
-		return null;
+		String query = "SELECT * FROM books WHERE " + searchType + " like '%" + keyword + "%'";
+		List<BookJpo> books = bookSearch.findByQuery(query);
+
+		if (books.isEmpty())
+			throw new NoSuchElementException("books empty");
+
+		return BookJpo.toDomains(books);
 	}
 
 	@Override

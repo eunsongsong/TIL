@@ -14,6 +14,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>books</name>
 	<description>Book project for Spring Boot</description>
+	
+	<repositories>
+		<repository>
+			<id>oracle</id>
+			<url>http://maven.icm.edu.pl/artifactory/repo/</url>
+		</repository>
+	</repositories>
 
 	<properties>
 		<java.version>11</java.version>
@@ -66,8 +73,15 @@
 			<version>2.8.5</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc6 -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0</version>
+		</dependency>
 
 	</dependencies>
+
 
 	<build>
 		<plugins>
