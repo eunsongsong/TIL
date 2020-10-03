@@ -34,6 +34,10 @@ public class TodoJpo {
 	private String startDate;
 	private String endDate;
 
+	public TodoJpo() {
+		super();
+	}
+	
 	public TodoJpo(Todo todo) {
 		super();
 		BeanUtils.copyProperties(todo, this);
