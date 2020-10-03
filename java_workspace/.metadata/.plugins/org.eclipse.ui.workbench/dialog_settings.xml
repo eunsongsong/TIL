@@ -17,35 +17,15 @@
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_HEIGHT" value="506"/>
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION" value="false"/>
-		<item key="dialogHeight" value="669"/>
-		<item key="dialogWidth" value="829"/>
+		<item key="dialogHeight" value="-1"/>
+		<item key="dialogWidth" value="-1"/>
 		<list key="orderedElements">
-			<item value="org.eclipse.wst.common.snippets.internal.ui.SnippetsView"/>
-			<item value="org.eclipse.ui.views.ProgressView"/>
-			<item value="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator"/>
-			<item value="org.eclipse.ui.views.ProblemView"/>
-			<item value="org.eclipse.jdt.junit.ResultView"/>
 		</list>
 		<list key="orderedProviders">
-			<item value="org.eclipse.e4.ui.parts"/>
-			<item value="org.eclipse.e4.ui.parts"/>
-			<item value="org.eclipse.e4.ui.parts"/>
-			<item value="org.eclipse.e4.ui.parts"/>
-			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
 		<list key="textEntries">
-			<item value="1"/>
-			<item value="1"/>
-			<item value="1"/>
-			<item value="1"/>
-			<item value="1"/>
 		</list>
 		<list key="textArray">
-			<item value="sn"/>
-			<item value="progre"/>
-			<item value="data"/>
-			<item value="problem"/>
-			<item value="junit"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">
