@@ -1,6 +1,5 @@
 package com.song.mc.todos.domain;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -8,20 +7,17 @@ import javax.persistence.Id;
 import com.google.gson.Gson;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Setter
-@Getter
+//@Setter
+//@Getter
+//@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Data
 public class Todo {
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, // 사용할 전략을 시퀀스로 선택
-			generator = "TODO_SEQ_GEN" // 식별자 생성기를 설정해놓은 TODO_SEQ_GEN으로 설정
-	)
+
 	private int todoNum;
 	private String title;
 	private String contents;
@@ -35,7 +31,11 @@ public class Todo {
 	}
 
 	public static Todo sample() {
-		return new Todo(0, "title", "content", "20200923", "20200323");
+		return new Todo(1, "title", "content", "2020-09-23", "2020-03-23");
+	}
+	
+	public static Todo sample2() {
+		return new Todo(2, "title2", "content2", "2020-09-23", "2020-03-23");
 	}
 
 	public static void main(String[] args) {

@@ -29,6 +29,11 @@ public class Book {
 		return new Book("9781617293986", "Spring Microservices in Action", "John Carnell", "Manning", 59.92,
 				"book_images/spring.jpg", "Spring Boot and Spring Cloud offer Java developers an easy");
 	}
+	
+	public static Book sample2() {
+		return new Book("0000000000000", "Spring Microservices in Action", "John Carnell", "Manning", 59.92,
+				"book_images/spring.jpg", "Spring Boot and Spring Cloud offer Java developers an easy");
+	}
 
 	public static void main(String[] args) {
 		System.out.println(Book.sample());

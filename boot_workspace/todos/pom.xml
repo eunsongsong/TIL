@@ -9,11 +9,19 @@
 		<version>2.1.17.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.song.todos</groupId>
+	<groupId>com.song.mc</groupId>
 	<artifactId>todos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>todos</name>
-	<description>Book project for Spring Boot</description>
+	<description>Todo project for Spring Boot</description>
+
+	<repositories>
+	
+		<repository>
+			<id>oracle</id>
+			<url>http://maven.icm.edu.pl/artifactory/repo/</url>
+		</repository>
+	</repositories>
 
 	<properties>
 		<java.version>11</java.version>

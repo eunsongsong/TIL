@@ -16,27 +16,33 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.song.mc.todos.domain.Todo;
 import com.song.mc.todos.domain.service.TodoService;
+import com.song.mc.todos.store.exception.DuplicateException;
 
 @RestController
 @RequestMapping("/api/todos/")
 public class TodoController {
 	
 	@Autowired
-	private TodoService service;
+	TodoService service;
 	
-	@PostMapping
-	public void todoCreate(@RequestBody Todo todo) {
-		service.todoCreate(todo);
+	@GetMapping()
+	public List<Todo> todoList() {
+		return service.todoList();
 	}
-	
+
 	@GetMapping("{todoNum}")
 	public Todo todoDetail(@PathVariable int todoNum) {
 		return service.todoDetail(todoNum);
 	}
 	
-	@GetMapping()
-	public List<Todo> todoList() {
-		return service.todoList();
+	@GetMapping("{searchType}/{keyword}")
+	public List<Todo> todoSearch(@PathVariable String searchType, @PathVariable String keyword){
+		return service.search(keyword, searchType);
+	}
+
+	@PostMapping
+	public void todoCreate(@RequestBody Todo todo) throws DuplicateException{
+		service.todoCreate(todo);
 	}
 	
 	@PutMapping

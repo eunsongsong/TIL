@@ -10,7 +10,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.stereotype.Repository;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.song.mc.todos.domain.Todo;
@@ -46,10 +45,31 @@ public class TodoStoreJpaImplTest {
 	}
 	
 	@Test
+	public void testFindTodo() {
+		Todo todo = repository.findById(1).get().toDomain();
+		assertEquals(todo.getTitle(), "title");
+	}
+	
+	@Test
+	public void testInsert() {
+		repository.save(new TodoJpo(Todo.sample2()));
+	}
+	
+	@Test
 	public void testUpdate() {
-		Todo todo = repository.findById(0).get().toDomain();
-		todo.setTitle("title2");
-//		repository.save(new TotoJp)
+		Todo todo = repository.getOne(1).toDomain();
+//		Todo todo = repository.findById(1).get().toDomain();
+		todo.setTitle("Title");
+		repository.save(new TodoJpo(todo));
+	
+//		todo = repository.findById(1).get().toDomain();
+//		assertEquals(todo.getTitle(), "Title");
+	}
+	
+	@Test
+	public void testDelete() {
+		repository.deleteById(1);
+//		repository.deleteAll();
 	}
 
 }

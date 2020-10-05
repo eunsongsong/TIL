@@ -9,17 +9,17 @@ import org.springframework.stereotype.Service;
 import com.song.mc.todos.domain.Todo;
 import com.song.mc.todos.domain.service.TodoService;
 import com.song.mc.todos.store.TodoStore;
+import com.song.mc.todos.store.exception.DuplicateException;
 
 @Service
 public class TodoServiceImpl implements TodoService {
 
 	@Autowired
-	TodoStore store;
+	private TodoStore store;
 
 	@Override
-	public void todoCreate(Todo todo) {
+	public void todoCreate(Todo todo) throws DuplicateException{
 		store.insert(todo);
-
 	}
 
 	@Override
@@ -29,7 +29,8 @@ public class TodoServiceImpl implements TodoService {
 
 	@Override
 	public List<Todo> todoList() throws NoSuchElementException {
-		return store.findAll();
+		List<Todo> todos = store.findAll();
+		return todos;
 	}
 
 	@Override
@@ -40,6 +41,11 @@ public class TodoServiceImpl implements TodoService {
 	@Override
 	public void todoDelete(int todoNum) throws NoSuchElementException {
 		store.delete(todoNum);
+	}
+	
+	@Override
+	public List<Todo> search(String keyword, String searchType) throws NoSuchElementException{
+		return store.search(keyword, searchType);
 	}
 
 }

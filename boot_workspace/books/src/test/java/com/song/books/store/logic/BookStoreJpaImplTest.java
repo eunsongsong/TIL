@@ -46,7 +46,7 @@ public class BookStoreJpaImplTest {
 		List<BookJpo> books = bookStore.findAll();
 
 		Book book = books.get(0).toDomain();
-		assertEquals(book.getTitle(), "Spring Microservices in Action");
+		assertEquals(book.getTitle(), "Spring Boot");
 
 	}
 
@@ -59,18 +59,18 @@ public class BookStoreJpaImplTest {
 
 	@Test
 	public void testCreate() {
-		bookStore.save(new BookJpo(Book.sample()));
+		bookStore.save(new BookJpo(Book.sample2()));
 	}
 
 	@Test
 	public void testUpdate() {
 		Book book = bookStore.findById("9781617293986").get().toDomain();
-		book.setTitle("Spring Boot");
+		book.setTitle("Spring Boot!!");
 		bookStore.save(new BookJpo(book));
 		
 		book = bookStore.findById("9781617293986").get().toDomain();
 		
-		assertEquals(book.getTitle(), "Spring Boot");
+		assertEquals(book.getTitle(), "Spring Boot!!");
 	}
 
 	@Test

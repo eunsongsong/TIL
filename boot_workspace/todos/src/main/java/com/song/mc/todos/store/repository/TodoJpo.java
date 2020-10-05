@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -15,16 +17,20 @@ import com.song.mc.todos.domain.Todo;
 
 import lombok.Data;
 
-@Entity
-@Data
-@Table(name = "todos")
 @SequenceGenerator(name = "TODO_SEQ_GEN", // 시퀀스 제너레이터 이름
 		sequenceName = "TODO_SEQ", // 시퀀스 이름
 		initialValue = 1, // 시작값
 		allocationSize = 1 // 메모리를 통해 할당할 범위 사이즈
 )
+@Entity
+@Data
+@Table(name = "todos")
 public class TodoJpo {
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, // 사용할 전략을 시퀀스로 선택
+			generator = "TODO_SEQ_GEN" // 식별자 생성기를 설정해놓은 TODO_SEQ_GEN으로 설정
+	)
 	@Column(nullable = false, unique = true)
 	private int todoNum;
 	@Column(nullable = false)
@@ -37,7 +43,7 @@ public class TodoJpo {
 	public TodoJpo() {
 		super();
 	}
-	
+
 	public TodoJpo(Todo todo) {
 		super();
 		BeanUtils.copyProperties(todo, this);
