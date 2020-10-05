@@ -1,58 +1,47 @@
 import axios from "axios";
-// import request from "./cors";
+//import request from './cors';
+//
 
 class BookApi {
-  //   URL = "http://localhost:9000/api/books/";
-  URL = "/api/books/";
+  URL = "/api/books/"; //http://localhost:9000/api/books
 
   bookList() {
-    axios
+    return axios
       .get(this.URL)
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => console.log(error));
+      .then((response) => (response && response.data) || null);
   }
 
-  // bookDetail(ISBN) : URL/ISBN Get Book
-  bookDetail(ISBN) {
-    axios
-      .get(this.URL + `${ISBN}/`)
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => console.log(error));
+  // bookDetail(ISBN) : URL/ISBN Get  : Book
+  bookDetail(isbn) {
+    return axios
+      .get(this.URL + `${isbn}/`)
+      .then((response) => (response && response.data) || null);
   }
 
-  // bookCreate(BookApiModel) : URL POST
+  // bookCreate(BookApiModel) : URL  POST
   bookCreate(bookApiModel) {
     let bookJson = JSON.stringify(bookApiModel);
     return axios
-      .post(this.URL, bookApiModel)
+      .post(this.URL, bookJson)
       .then((response) => (response && response.data) || null);
-
-    // return axios
-    //   .post(this.URL, bookApiModel)
-    //   .then((response) => (response && response.data) || null);
-
-    // response != null && response.data != null ? response.data : null
+    //reoponse!=null && response.data != null ?response.data : null
   }
-
   // bookModify(BookApiModel) : URL PUT
   bookModify(bookApiModel) {
+    let bookJson = JSON.stringify(bookApiModel);
     return axios
-      .put(this.URL, bookApiModel)
+      .put(this.URL, bookJson)
       .then((response) => (response && response.data) || null);
   }
 
   // bookDelete(ISBN) : URL/ISBN Delete
-  bookDelete(ISBN) {
+  bookDelete(isbn) {
     return axios
-      .delete(this.URL + `${ISBN}/`)
+      .delete(this.URL + `${isbn}/`)
       .then((response) => (response && response.data) || null);
   }
 
-  // search(searchType, keyword) : URL/searchType/keyword Get : Book[]
+  // search(searchType, keyword): URL/searchType/keyword Get :Book[]
   search(searchType, keyword) {
     return axios
       .get(this.URL + `${searchType}/${keyword}/`)

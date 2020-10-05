@@ -1,29 +1,30 @@
-import React, { Component } from "react";
-import BookListView from "../view/BookListView";
-import { observer, inject } from "mobx-react";
+import React, { Component } from 'react';
+import BookListView from '../view/BookListView';
+import { observer, inject } from 'mobx-react';
 
-@inject("bookStore")
+@inject('bookStore')
 @observer
 class BookListContainer extends Component {
-  componentDidMount() {
-    // console.log("booklistContainer");
-    const { bookStore } = this.props;
 
-    if (bookStore) {
-      bookStore.bookList();
+    componentDidMount(){
+        const {bookStore} = this.props;
+        if( bookStore){
+          bookStore.bookList();
+      }
     }
-  }
 
-  onSelect = (book) => {
-    const { bookStore } = this.props;
-    bookStore.select(book);
-  };
+    onSelect = (book) => {
+        const { bookStore } = this.props;
+        bookStore.select(book);
+    }
 
-  render() {
-    const { bookStore } = this.props;
+    render() {
+        const { bookStore } = this.props;
 
-    return <BookListView books={bookStore._books} onSelect={this.onSelect} />;
-  }
+        return (
+            <BookListView books={bookStore._books} onSelect={this.onSelect} />
+        );
+    }
 }
 
 export default BookListContainer;

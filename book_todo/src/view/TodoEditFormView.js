@@ -5,9 +5,6 @@ import "react-datepicker/dist/react-datepicker.css";
 
 class TodoEditFormView extends PureComponent {
   //
-  // constructor(props) {
-  //   super(props);
-  // }
 
   render() {
     //
@@ -29,15 +26,37 @@ class TodoEditFormView extends PureComponent {
             value={todo && todo.title ? todo.title : ""}
             onChange={(e) => onSetTodoProp("title", e.target.value)}
           />
+          <Form.Input
+            fluid
+            label="Contents"
+            placeholder="Contents"
+            value={todo && todo.contents ? todo.contents : ""}
+            onChange={(e) => onSetTodoProp("contents", e.target.value)}
+          />
           <Form.Field>
-            <label>Date</label>
+            <label>StartDate</label>
             <DatePicker
               showTimeSelect
-              selected={todo && todo.date ? todo.date : null}
+              selected={todo && todo.startDate ? todo.startDate : null}
               dateFormat="yyyy-MM-dd hh:mm"
               timeFormat="hh:mm"
               timeIntervals={15}
-              onChange={(date) => onSetTodoProp("date", date.valueOf())}
+              onChange={(startDate) =>
+                onSetTodoProp("startDate", startDate.valueOf())
+              }
+            />
+          </Form.Field>
+          <Form.Field>
+            <label>EndDate</label>
+            <DatePicker
+              showTimeSelect
+              selected={todo && todo.endDate ? todo.endDate : null}
+              dateFormat="yyyy-MM-dd hh:mm"
+              timeFormat="hh:mm"
+              timeIntervals={15}
+              onChange={(endDate) =>
+                onSetTodoProp("endDate", endDate.valueOf())
+              }
             />
           </Form.Field>
         </Form.Group>
