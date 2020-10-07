@@ -57,8 +57,7 @@ public class TodoStoreJpaImplTest {
 	
 	@Test
 	public void testUpdate() {
-		Todo todo = repository.getOne(1).toDomain();
-//		Todo todo = repository.findById(1).get().toDomain();
+		Todo todo = repository.findById(1).get().toDomain();
 		todo.setTitle("Title");
 		repository.save(new TodoJpo(todo));
 	
