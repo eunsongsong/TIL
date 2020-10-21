@@ -7,6 +7,7 @@ class TodoListView extends PureComponent {
   render() {
     //
     const { todos, onSelectTodo } = this.props;
+    console.log(todos[0]);
 
     return (
       <Table celled>

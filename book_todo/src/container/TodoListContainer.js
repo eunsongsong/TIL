@@ -18,8 +18,10 @@ class TodoListContainer extends Component {
   };
 
   render() {
-    const todos = this.props.todoStore.getTodos;
-    return <TodoListView todos={todos} onSelectTodo={this.onSelectTodo} />;
+    const todos = this.props.todoStore;
+    console.log("render");
+    console.log("+++",todos);
+    return <TodoListView todos={todos.getTodos} onSelectTodo={this.onSelectTodo} />;
   }
 }
 

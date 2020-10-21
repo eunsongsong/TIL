@@ -20,6 +20,7 @@ class BookListContainer extends Component {
 
     render() {
         const { bookStore } = this.props;
+        console.log();
 
         return (
             <BookListView books={bookStore._books} onSelect={this.onSelect} />
