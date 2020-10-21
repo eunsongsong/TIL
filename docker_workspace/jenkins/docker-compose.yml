@@ -1,0 +1,17 @@
+version: "3" #docker-compose version
+services:
+  master:
+    container_name: master
+    image: jenkins/jenkins
+    ports: #port forwarding
+        - 9090:8080
+    volumes: #host 현재 작업위치/jenkins_home과 jenkins container mount
+        - ./jenkins_home:/var/jenkins_home
+    # links: 
+    #     - agent01
+
+#   agent01:
+#     container_name: agent01
+#     image: jenkinsci/ssh-slave
+#     environment: 
+#         - JENKINS_SLAVE_SSH_PUBKEY=ssh-rsa public key 
