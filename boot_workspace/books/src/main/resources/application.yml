@@ -16,6 +16,11 @@ spring:  h2:    console:      enabled: true
     url: jdbc:oracle:thin:@localhost:1521:XE
     username: hr
     password: hr
+    
+#  jpa:
+#    database-platform: org.hibernate.dialect.OracleDialect
+#    show-sql: true
+
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
