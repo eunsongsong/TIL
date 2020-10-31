@@ -3,6 +3,7 @@ services:
   master:
     container_name: master
     image: jenkins/jenkins
+    user: root
     ports: #port forwarding
         - 9090:8080
     volumes: #host 현재 작업위치/jenkins_home과 jenkins container mount

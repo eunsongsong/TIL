@@ -1,0 +1,11 @@
+--DROP TABLE IF EXISTS users;
+DROP TABLE users;
+
+CREATE TABLE users (
+ id NUMBER(20) PRIMARY KEY,
+ name VARCHAR2(20) NOT NULL,
+ email VARCHAR2(50) ,
+ picture VARCHAR2(50) ,
+ role VARCHAR2(10) NOT NULL
+ );
+COMMIT;
