@@ -1,4 +1,4 @@
-### Mac OS 터미널에서 git branch 보기
+### macOS 터미널에서 git branch 보기
 
 1. 홈 디렉토리의 .zshrc 파일에서 vi 편집기를 실행한다.
 
